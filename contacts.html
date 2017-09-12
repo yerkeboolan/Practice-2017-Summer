@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link href="css/bootstrap.min.css" rel="stylesheet" />
+        <link href="css/bootstrap-theme.min.css" rel="stylesheet" />
+        <link href="cimg.css" rel="stylesheet">
+    </head>
+   
+    <body  ng-app="helpMeMdl" ng-controller="helpMeCtrl as ctrl" ng-init="ctrl.init()">
+       <div class="topnav" id="myTopnav">
+  <a href="view.html"><span class="glyphicon glyphicon-home text-info"></span>Home</a>
+  <a href="news.html"><span class="glyphicon glyphicon-th-list text-success"></span>News</a>
+  <a href="contacts.html"><span class="glyphicon glyphicon-star text-warning"></span>Contacts</a>
+  <a href="about.html"><span class="glyphicon glyphicon-sunglasses text-info"></span>About us</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+        <div class="col-md-2" id="ddown"><h2>Contacts: </h2></div>
+        <div id="down" class="col-md-4">
+        <p><span class="glyphicon glyphicon-phone"></span><b> Mobile phone: 8 (777) 444-40-49 </b></p>
+        <p><span class="glyphicon glyphicon-earphone"></span> <b>Telephone: 8 (727) 234-99-71 </b></p>
+        <p><span class="glyphicon glyphicon-envelope"></span> <b> Email: erke.zhumagali@gmail.com</b></p>
+        <p><span class="glyphicon glyphicon-send"></span> <b> Telegram: http://t.me/yerkebulanyz </b></p>
+        <p><span class="glyphicon glyphicon-user"></span> <b> Facebook: http://www.facebook.com/yerkebulanyz</b></p>
+        
+        </div>
+ <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery.signalR-2.1.2.min.js"></script>
+    <script src="js/hubs.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/helpMeService.js"></script>
+    <script src="js/helpMeController.js"></script>
+    <script src="js/index.js"></script> 
+</body>
+</html>

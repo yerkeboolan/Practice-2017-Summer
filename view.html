@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link href="css/bootstrap.min.css" rel="stylesheet" />
+        <link href="css/bootstrap-theme.min.css" rel="stylesheet" />
+        <link href="bimg.css" rel="stylesheet">
+    </head>
+  <body ng-app="helpMeMdl" ng-controller="helpMeCtrl as ctrl" ng-init="ctrl.init()">
+     
+    <div class="topnav" id="myTopnav">
+    <a href="home.html"><span class="glyphicon glyphicon-home text-info"></span>Home</a>
+    <a href="news.html"><span class="glyphicon glyphicon-th-list text-success"></span>News</a>
+    <a href="contacts.html"><span class="glyphicon glyphicon-star text-warning"></span>Contacts</a>
+    <a href="about.html"><span class="glyphicon glyphicon-sunglasses text-info"></span>About us</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+    
+    <div class="container">
+     
+        <div class="row" ng-if="ctrl.state == 0">
+            <div id="hcenter" class="col-md-4 text-center col-md-offset-4">
+                <p> 
+                    <h3 id="lime"><b>Sign in to BookStore</b></h3>  <input class="form-control" ng-model="ctrl.user.name" placeholder="Username">
+                    <div id="down" class="col-md-4"></div>
+                    <input type="password" class="form-control" ng-model="ctrl.pw.password" placeholder="Password">
+                </p>
+                <p>
+                    <button type="button" class="btn btn-success btn-lg btn-block"  ng-click="ctrl.login()">Sign in</button>
+                </p>
+            </div>
+        </div>
+    
+
+<div class="row" ng-if="ctrl.state != 0">
+            <div id="tcenter" class="col-md-4">
+                <h2 id="red"> Bookstore <small><a href="#" ng-click="ctrl.create()">
+                  
+                <span id="itscolor" class="glyphicon glyphicon-plus">    
+                        </span></a><a href="#" ng-click="ctrl.deleteAll()">
+                            <span id="itscolor" class="glyphicon glyphicon-trash">
+                                </span></a></small></h2>
+
+ <div class="panel panel-success" ng-if="ctrl.state == 2">
+                    <div class="panel-heading" id="asd"><b>Requests</b></div>
+                    <div  class="panel-body">
+                        <p>
+                            <b>Genre: </b> <input id="colorits"  type="text" 
+                                                  class="form-control"
+                                                  ng-model="ctrl.nwTicket.Head"/>
+                        </p>
+                        <p>
+                            <b>Style: </b> <textarea class="form-control"
+                                                  ng-model="ctrl.nwTicket.Body"></textarea>
+                        </p>
+                    </div>  
+  <div class="panel-footer">
+                        <a href="#" ng-click="ctrl.submit()">
+                            <span class="glyphicon glyphicon-pushpin text-success">
+                                </span> Submit</a>
+                    </div>
+                </div>
+<div ng-repeat="item in ctrl.tickets"
+                     class="panel"
+                     ng-class="{'panel-success': item.Guid == ctrl.selectedTicket.Guid, 'panel-default': item.Guid != ctrl.selectedTicket.Guid}"
+                     ng-click="ctrl.select(item)">
+                    <div class="panel-heading">{{item.Head}}</div>
+                    <div class="panel-body">
+                        {{item.Body}}
+                    </div>
+                    <div class="panel-footer">
+                        <b>Author: </b> {{item.AuthorName}}
+                    </div>
+                </div>
+                
+            </div>
+<div id="tcenter" class="col-md-8" ng-if="ctrl.state == 3">
+                <h2 id="crimson"> Comments: </h2>
+                <button class="btn btn-warning" ng-click = "ctrl.delete($index)">Delete</button>
+                <div class="panel panel-info">
+                    <div class="panel-heading">{{ctrl.selectedTicket.AuthorName}}: {{ctrl.selectedTicket.Head}}</div>
+                    <div class="panel-body">
+                        <p>
+                            <b>Genre: </b>
+                        </p>
+                        <p>
+                            {{ctrl.selectedTicket.Body}}
+                        </p>
+                        <hr />
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Author</th>
+                                    <th>Message</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in ctrl.selectedTicket.Comments">
+                                    <td>{{item.AuthorName}}</td>
+                                    <td>{{item.Message}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <input type="text" ng-model="ctrl.nwComment" class="form-control" />
+                            </div>
+                            <div class="col-md-4">
+                                <a href="#" ng-click="ctrl.createComment()"><span class="glyphicon glyphicon-save text-success"></span> Submit</a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Scripts -->
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery.signalR-2.1.2.min.js"></script>
+    <script src="js/hubs.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/helpMeService.js"></script>
+    <script src="js/helpMeController.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

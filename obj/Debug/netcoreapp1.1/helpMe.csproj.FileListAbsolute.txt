@@ -1,0 +1,8 @@
+D:\Repositories\strds\helpMe\bin\Debug\netcoreapp1.1\helpMe.deps.json
+D:\Repositories\strds\helpMe\bin\Debug\netcoreapp1.1\helpMe.runtimeconfig.json
+D:\Repositories\strds\helpMe\bin\Debug\netcoreapp1.1\helpMe.runtimeconfig.dev.json
+D:\Repositories\strds\helpMe\bin\Debug\netcoreapp1.1\helpMe.dll
+D:\Repositories\strds\helpMe\bin\Debug\netcoreapp1.1\helpMe.pdb
+D:\Repositories\strds\helpMe\obj\Debug\netcoreapp1.1\helpMe.AssemblyInfo.cs
+D:\Repositories\strds\helpMe\obj\Debug\netcoreapp1.1\helpMe.dll
+D:\Repositories\strds\helpMe\obj\Debug\netcoreapp1.1\helpMe.pdb
